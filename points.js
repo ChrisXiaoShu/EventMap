@@ -10,11 +10,11 @@ $.getJSON('points.json', function (data) {
 function initialize() {
 
     /*map setting*/
-    $('#map-canvas').height(window.outerHeight / 2.2);
+    $('#map-canvas').height(window.outerHeight / 1.5);
 
     map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 10,
-        center: {lat: 23.00, lng: 120.30}
+        zoom: 12,
+        center: {lat:25.0501101, lng: 121.5255337}
     });
 
     var markers = [];
@@ -22,7 +22,7 @@ function initialize() {
         var latLng = new google.maps.LatLng(points[p]['latitude'], points[p]['longitude']);
         var markerTitle = points[p].title;
         if (null !== points[p].year) {
-            markerTitle = '[' + points[p].year + ']' + points[p].title;
+            markerTitle = points[p].title;
         }
         bounds.extend(latLng);
         var marker = new MarkerWithLabel({
@@ -37,13 +37,11 @@ function initialize() {
         google.maps.event.addListener(marker, 'click', (function (marker) {
             return function () {
                 var pageContent = '';
-                if (marker.info.year !== null) {
-                    pageContent += '<br /><b>年度：</b> ' + marker.info.year;
-                }
-                pageContent += '<br /><b>位置：</b> [' + marker.info.area + ']' + marker.info.location;
-                pageContent += '<br /><b>案件：</b><p>' + marker.info.description + '</p>';
-                var info = '<b>[' + marker.info.year + ']' + marker.info.title + '</b>';
-                info += '<br /><b>位置：</b> [' + marker.info.area + ']' + marker.info.location;
+                pageContent += '<br /><b >時間：</b> ' + marker.info.start_time +'~'+marker.info.end_time;
+                pageContent += '<br /><b >地點：</b>' + marker.info.location;
+                pageContent += '<br /><a href="' + marker.info.href+'">' +'詳細資訊 </a>';
+                var info = '<b>' + marker.info.title + '</b>';
+                info += '<br /><b>時間：</b> ' + marker.info.start_time +'~'+marker.info.end_time;
                 infowindow.setContent(info);
                 infowindow.open(map, marker);
                 $('#title').html(marker.info.title);
