@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    build: ./src
+    ports:
+     - "8000:8000"
+    command: /bin/sh -c "cd /map/src/mysite/ &&
+              while sleep 1000; do :; done"
+    volumes:
+      - .:/map
+  faktory:
+    build: ./faktory
+    ports:
+     - "7420:7420"
