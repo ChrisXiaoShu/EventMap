@@ -11,12 +11,18 @@
 - 部屬方式
   目前主要使用github.io架設靜態網站，後端server每周定期更新活動資訊
 - [參考的前端原始碼](https://github.com/kiang/bribes_map)
-- 開發相關請參考[github/wiki](https://github.com/ChrisXiaoShu/EventMap/wiki)
+- 詳細開發相關請參考[github/wiki](https://github.com/ChrisXiaoShu/EventMap/wiki)
 ### 後端
 - 使用python撰寫各縣市政府網站爬蟲腳本
 - 部屬爬蟲腳本於GCP server
 - 使用MQserver管理爬蟲工作狀態
-- 開發相關請參考[github/wiki](https://github.com/ChrisXiaoShu/EventMap/wiki)
+- 使用google map API 轉換地址to經緯度
+- 使用sqlite.db存活動資訊
+- 詳細開發相關請參考[github/wiki](https://github.com/ChrisXiaoShu/EventMap/wiki)
+### 目標網站
+- [X] [台北旅遊網](https://www.travel.taipei/zh-tw/event-calendar/2020)
+- [ ] [台北政府活動資訊](https://www.gov.taipei/ActivityTheme3.aspx?n=B1167F83E1FE0CD9&sms=9D72E82EC16F3E64)
+- [ ] [新北市政府活動訊息旅遊網](https://www.ntpc.gov.tw/ch/home.jsp) 藝文休閒類別
 ## Need
 - 各縣市政府網站眾多，且各自有不同架構，須個別開發爬蟲腳本，期望能有自同道和的朋友能夠一起開發
-- 本人主要擅長python跟後端架構，對前端javascript一翹不通，如有對優化前端有興趣的人歡迎憶起加入。
+- 本人主要擅長python跟後端架構，對前端javascript一翹不通，如有對優化前端有興趣的人歡迎一起加入。
