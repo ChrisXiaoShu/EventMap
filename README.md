@@ -1,29 +1,26 @@
-# 台灣政府活動地圖
+# Taiwan Government Event Map
 ## Why
-台灣各縣市政府每月都有豐富的活動資源，可能是各地季節性觀光資訊、各地比賽活動、文藝休閒展覽等，其相關資訊都分散在各縣市政府，或當地旅遊網。其資源相當分散，當希望快速掌握附近活動等資訊，須在各縣市政府網站的活動年曆逐項搜尋，十分麻煩。因此希望架構一個整合各縣市政府活動資訊的網站，統一將活動訊息以地圖的方式呈現，使使用者能夠快速方便的一覽附近活動，促進國人餐與各地政府活動。  
-[網頁Demo](https://chrisxiaoshu.github.io/EventMap/)  
-[網頁原始碼](https://github.com/ChrisXiaoShu/EventMap)
+There is plenty useful activity information in every county and city website. Some of the activities are season traveling info, some are competition event, other mybe exhibition informatioin. However each county or city government has there own website, they only publish the info in their platform. For those people who want to know all the evnet, they have to go through the different wesite. It is not convenient. Therefor, this project ( EventMap ) is trying to solve this problem. The idea is to collect all the infomation from every county and city government website by web crawl, and publish the data in one organize website by using map like format. 
+[Web Demo](https://chrisxiaoshu.github.io/EventMap/)  \
 
 ## How
-### 前端
-- 使用語言
+### Front-end
+- programming language
   javascript、html、css
-- 部屬方式
-  目前主要使用github.io架設靜態網站，後端server每周定期更新活動資訊
-- [參考的前端原始碼](https://github.com/kiang/bribes_map)
-- 詳細開發相關請參考[github/wiki](https://github.com/ChrisXiaoShu/EventMap/wiki)
-### 後端
-- 使用python撰寫各縣市政府網站爬蟲腳本
-- 部屬爬蟲腳本於GCP server
-- 使用MQserver管理爬蟲工作狀態
-- 使用google map API 轉換地址to經緯度
-- 使用sqlite.db存活動資訊
-- 詳細開發相關請參考[github/wiki](https://github.com/ChrisXiaoShu/EventMap/wiki)
-### 目標網站
-- [X] [台北旅遊網](https://www.travel.taipei/zh-tw/event-calendar/2020)
-- [ ] [台北政府活動資訊](https://www.gov.taipei/ActivityTheme3.aspx?n=B1167F83E1FE0CD9&sms=9D72E82EC16F3E64)
-- [ ] [新北市政府活動訊息旅遊網](https://www.ntpc.gov.tw/ch/home.jsp) 藝文休閒類別
-## Need
-- 各縣市政府網站眾多，且各自有不同架構，須個別開發爬蟲腳本，期望能有自同道和的朋友能夠一起開發
-- 本人主要擅長python跟後端架構，對前端javascript一翹不通，如有對優化前端有興趣的人歡迎一起加入。
+- envirunment 
+  using github.io estabish static web site. The back-end application will run the crawler and push the newest infomation in github to update the map.
+- [reference](https://github.com/kiang/bribes_map)
+- [detail](https://github.com/ChrisXiaoShu/EventMap/wiki)
+### back-end
+- using python to develop web cralwer script
+- running script on GCP server
+- running and monitor cralwer script by MQ server structure 
+- using google map API
+- store data by sqlite database
+- [detail](https://github.com/ChrisXiaoShu/EventMap/wiki)
+### crawler target
+- [X] [Taipei Travel](https://www.travel.taipei/zh-tw/event-calendar/2020)
+- [ ] [Taipei Gov Activity](https://www.gov.taipei/ActivityTheme3.aspx?n=B1167F83E1FE0CD9&sms=9D72E82EC16F3E64)
+- [ ] [New Taipei Gov travel information](https://www.ntpc.gov.tw/ch/home.jsp)
+
 
